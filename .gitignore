@@ -11,3 +11,7 @@
 
 .idea/compiler.xml
 .idea/**
+
+# Gradle
+.gradle/
+build/

@@ -16,6 +16,7 @@ class OrderEventConsumer {
     @KafkaListener(
         topics = ["\${kafka.topics.orders}"],
         groupId = "order-processing-group",
+        // 병렬 처리를 위한 설정. 병렬 처리를 하고자 할 때 사용하는 스레드 갯수 지정. 일반적으로 topic에 있는 partition 갯수만큼 설정
         concurrency = "3",
         containerFactory = "orderEventKafkaListenerContainerFactory"
     )
